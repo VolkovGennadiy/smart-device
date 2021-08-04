@@ -16,6 +16,8 @@
   align-items: center;
   gap: 50px;
   margin-right: 35px;
+  width: 657px;
+  flex-wrap: wrap;
 }
 
 .navigation__link {
@@ -27,38 +29,16 @@
   color: #ffffff;
 }
 
-.navigation__item--email {
-  position: relative;
-
-  &::before {
-    position: absolute;
-    content: '';
-    width: 20px;
-    height: 16px;
-    background-repeat: no-repeat;
-    background-image: url('../../img/email.svg');
-    top: 1px;
-    left: -39px;
-  }
+.navigation__img {
+  margin-right: 7px;
 }
 
-.navigation__item--tell {
-  position: relative;
-
-  &::before {
-    position: absolute;
-    content: '';
-    width: 20px;
-    height: 20px;
-    background-repeat: no-repeat;
-    background-image: url('../../img/phone.svg');
-    top: -1px;
-    left: 38px;
-  }
+.navigation__img--email {
+  margin-right: 9px;
 }
 
 .navigation__link--tell {
-  margin-left: 72px;
+  margin-left: 38px;
 }
 
 .navigation__button {

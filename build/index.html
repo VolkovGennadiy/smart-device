@@ -15,10 +15,16 @@
       </a>
       <ul class="navigation__list no-bulites">
         <li class="navigation__item navigation__item--email">
-          <a class="navigation__link" href="mailto:info@sd.ru">info@sd.ru</a>
+          <a class="navigation__link" href="mailto:info@sd.ru">
+            <img class="navigation__img navigation__img--email" src="img/email.svg" alt="Изобродение конверта для обратной связи">
+            <span>info@sd.ru</span>
+          </a>
         </li>
         <li class="navigation__item navigation__item--tell">
-          <a class="navigation__link navigation__link--tell" href="tel:+7 (495) 000 52 52">+7 (495) 000 52 52</a>
+          <a class="navigation__link navigation__link--tell" href="tel:+7 (495) 000 52 52">
+            <img class="navigation__img" src="img/phone.svg" alt="Изображение телефоной труубки для обратной связи">
+            <span>+7 (495) 000 52 52</span>
+          </a>
         </li>
         <li class="navigation__item navigation__item--button">
           <a class="navigation__button">Заказать звонок</a>
@@ -43,5 +49,32 @@
   </main>
   <footer class="page-footer">
   </footer>
+  <div id="openmodalLost" class="modal">
+    <a class="modallost__close" href="#"></a>
+    <div class="modal__description">
+      <h2>Закажите звонок</h2>
+      <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
+    </div>
+    <form class="modal__form" action="https://echo.htmlacademy.ru" method="post">
+      <div class="modal__block">
+        <label class="modal__label" for="name"></label>
+        <input class="modal__input" type="text" id="name" name="name" placeholder="Имя">
+      </div>
+      <div class="modal__block">
+        <label class="modal__label" for="tell"></label>
+        <input class="modal__input" type="tel" id="tell" name="tell" placeholder="Телефон">
+      </div>
+      <div class="modal__block">
+        <label class="modal__label" for="text"></label>
+        <textarea class="modal__text" id="text" name="text" placeholder="Ваш вопрос"></textarea>
+      </div>
+      <button class="modal__send" type="submit">Отправить</button>
+      <div class="moadl__block--check">
+        <input class="modal__checkbox" type="checkbox" id="checkbox" name="checkbox" placeholder="Телефон">
+        <label class="modal__label" for="checkbox"></label>
+        <a class="modal__link">Я согласен на обработку  персональных данных</a>
+      </div>
+    </form>
+  </div>
 </body>
 </html>
