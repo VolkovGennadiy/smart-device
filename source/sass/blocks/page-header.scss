@@ -4,4 +4,12 @@
   background-image: url('../../img/header-background.png');
   background-repeat: no-repeat;
   overflow: hidden;
+
+  @media (max-width: $tablet-width) {
+    min-height: 686px;
+  }
+
+  @media (max-width: $mobile-width) {
+    min-height: 647px;
+  }
 }
