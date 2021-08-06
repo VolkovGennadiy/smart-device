@@ -1,0 +1,129 @@
+.footer-navigation {
+  display: flex;
+  width: 95%;
+  max-width: 1448px;
+  margin: 0 auto;
+  justify-content: space-between;
+  min-height: 264px;
+
+  @media (max-width: $tablet-width) {
+    max-width: 750px;
+    flex-wrap: wrap;
+  }
+}
+
+.footer-navigation__block {
+  margin-top: 65px;
+  margin-left: 36px;
+
+  @media (max-width: $tablet-width) {
+    display: flex;
+    width: 721px;
+    justify-content: space-between;
+    margin-top: 19px;
+    margin-left: 5px;
+  }
+}
+
+.footer-navigation__block span {
+  display: none;
+}
+
+.footer-navigation__list {
+  display: flex;
+  margin-top: 49px;
+  gap: 15px;
+
+  @media (max-width: $tablet-width) {
+    margin-top: 12px;
+  }
+}
+
+.footer-navigation__section {
+  margin-top: 53px;
+  margin-left: -214px;
+}
+
+.footer-navigation__ofice {
+  margin-top: 52px;
+}
+
+.footer-navigation__section h2, .footer-navigation__ofice h2 {
+  font-family: "Roboto Condensed Regular", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #1B2D37;
+  margin-bottom: 25px;
+}
+
+.footer-navigation__section--link, .footer-navigation__ofice-link {
+  font-family: "PT Mono", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 25px;
+  color: #1B2D37;
+  opacity: 0.5;
+}
+
+.footer-navigation__section-list {
+  height: 108px;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  column-gap: 71px;
+}
+
+.footer-copiraiting {
+  width: 100%;
+  border-top: 1px solid #626962;
+}
+
+.footer-copiraiting__list {
+  display: flex;
+  margin-left: 37px;
+}
+
+.footer-copiraiting__block {
+  display: flex;
+  width: 95%;
+  max-width: 1449px;
+  margin: 0 auto;
+  justify-content: space-between;
+  margin-top: 13px;
+}
+
+.footer-copiraiting__item span {
+  font-family: "PT Mono", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #1B2D37;
+  opacity: 0.5;
+  margin-right: 74px;
+}
+
+.footer-copiraiting__item--confidition span {
+  margin-left: 69px;
+}
+
+.footer-copiraiting__block span {
+  font-family: "PT Mono", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #1B2D37;
+  opacity: 0.5;
+}
