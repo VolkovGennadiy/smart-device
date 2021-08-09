@@ -1,0 +1,65 @@
+.about {
+  display: flex;
+  width: 1229px;
+  margin: 0 auto;
+  padding-top: 75px;
+}
+
+.about img {
+  margin-top: 34px;
+}
+
+.about__item p {
+  font-family: "Roboto Condensed Regular", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 51px;
+  color: #666666;
+  margin-left: -11px;
+  margin-top: 29px;
+  margin-bottom: 31px;
+}
+
+.about__item--text p {
+  font-family: "PT Mono", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #666666;
+  margin-left: -11px;
+  margin-top: -8px;
+  margin-bottom: 27px;
+  width: 970px;
+}
+
+.about__block span {
+  font-family: "PT Mono", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #666666;
+}
+
+.about__link {
+  font-family: "Roboto Condensed Bold", "Arial", sans-serif;
+  border: 1px solid #00B2FF;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #00B2FF;
+  padding: 12px 50px;
+  margin-left: -11px;
+}
+
+.about__item--link {
+  margin-top: 52px;
+}
