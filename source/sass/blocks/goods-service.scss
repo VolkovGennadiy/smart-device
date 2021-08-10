@@ -1,0 +1,98 @@
+.goods-service h2 {
+  font-family: "Roboto Condensed Regular", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 51px;
+  color: #FFFFFF;
+  padding-top: 88px;
+  width: 95%;
+  max-width: 1174px;
+  margin: 0 auto;
+
+  @media (max-width: $tablet-width) {
+    font-size: 32px;
+    line-height: 140.62%;
+    max-width: 631px;
+    padding-top: 50px;
+    margin-left: 25px;
+  }
+}
+
+.goods-service__list {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 29px;
+  margin-top: 81px;
+  flex-wrap: wrap;
+
+  @media (max-width: $tablet-width) {
+    flex-direction: column;
+  }
+}
+
+.goods-service {
+  width: 100%;
+  min-height: 938px;
+  background-color: #1B2D37;
+}
+
+.goods-service__image {
+  opacity: 0.2;
+  width: 100%;
+  height: 100%;
+
+  /* @media (max-width: $tablet-width) {
+    width: 100%;
+    max-width: 720px;
+    height: 256px;
+  } */
+}
+
+.goods-service__block {
+  position: relative;
+  width: 370px;
+  height: 620px;
+  overflow: hidden;
+  border: 1px solid;
+}
+
+.goods-service__block p {
+  position: absolute;
+  font-family: "Roboto Condensed Regular", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  color: #ffffff;
+  width: 160px;
+  top: 30px;
+  left: 43px;
+
+}
+
+.goods-service__cotainer {
+  position: absolute;
+  top: 556px;
+  left: 306px;
+}
+
+.goods-service__button {
+  display: inline-block;
+  position: relative;
+  width: 63px;
+  height: 63px;
+  background-color: #00B2FF;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-repeat: no-repeat;
+    background-image: url('../../img/arrov-left.svg');
+    top: 29px;
+    left: 31px;
+  }
+}
