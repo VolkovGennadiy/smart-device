@@ -5,10 +5,14 @@
   margin: 0 auto;
   padding-top: 75px;
   justify-content: center;
-  min-height: 418px;
+  min-height: 448px;
 
   @media (max-width: $tablet-width) {
     min-height: 412px;
+  }
+
+  @media (max-width: $mobile-width) {
+    min-height: 535px;
   }
 }
 
@@ -123,7 +127,7 @@
   }
 
   @media (max-width: $mobile-width) {
-    margin-left: 17px;
+    margin-left: 13px;
   }
 }
 

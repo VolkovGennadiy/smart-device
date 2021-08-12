@@ -147,44 +147,70 @@
       <ul class="goods-service__list no-bulites">
         <li class="goods-service__item">
           <a class="goods-service__link" href="#">
-            <div class="goods-service__block">
-              <img class="goods-service__image" src="img/manafucture_big.png" width="720" height="620" alt="Изображение производства печатных плат">
+            <div class="goods-service__block goods-service__block--manafacturi">
               <p>Производство печатных плат</p>
-              <div class="goods-service__cotainer">
-                <a class="goods-service__button">
+              <div class="goods-service__cotainer goods-service__cotainer--manafacturi">
+                <button class="goods-service__button">
                   <span class="visually-hidden">Кнопка</span>
-                </a>
+                </button>
               </div>
             </div>
           </a>
         </li>
         <li class="goods-service__item">
           <a class="goods-service__link" href="#">
-            <div class="goods-service__block">
-              <img class="goods-service__image" src="img/mounting.png" width="370" height="620" alt="Изображение монтажа печатных плат">
+            <div class="goods-service__block goods-service__block--mounting">
               <p>Монтаж печатных плат</p>
               <div class="goods-service__cotainer">
-                <a class="goods-service__button">
+                <button class="goods-service__button">
                   <span class="visually-hidden">Кнопка</span>
-                </a>
+                </button>
               </div>
             </div>
           </a>
         </li>
         <li class="goods-service__item">
           <a class="goods-service__link" href="#">
-            <div class="goods-service__block">
-              <img class="goods-service__image" src="img/manafucture.png" width="370" height="620" alt="Изображение комплектующих для светотехники">
+            <div class="goods-service__block goods-service__block--accessories">
               <p>Комплектующие для светотехники</p>
               <div class="goods-service__cotainer">
-                <a class="goods-service__button">
+                <button class="goods-service__button">
                   <span class="visually-hidden">Кнопка</span>
-                </a>
+                </button>
               </div>
             </div>
           </a>
         </li>
       </ul>
+    </section>
+    <section class="feedback">
+      <div class="feedback__image">
+        <img src="img/paper_airplane.png" width="511" height="288">
+      </div>
+      <div class="feedback__connection">
+        <h2>Остались вопросы? Задайте их нам!</h2>
+        <p>Мы проконсультируем Вас бесплатно</p>
+        <form class="feedback__form" action="https://echo.htmlacademy.ru" method="post">
+          <div class="feedback__block">
+            <label for="name"></label>
+            <input type="text" id="name" name="name" placeholder="Имя">
+          </div>
+          <div class="feedback__block">
+            <label for="tell"></label>
+            <input type="tel" id="tell" name="tell" placeholder="Телефон">
+          </div>
+          <div class="feedback__block">
+            <label for="text"></label>
+            <textarea id="text" name="text" placeholder="Ваш вопрос"></textarea>
+          </div>
+          <button class="feedback__send" type="submit">Задать вопрос</button>
+          <div class="feedback__block feedback__block--check">
+            <input type="checkbox" id="checkbox" name="checkbox" placeholder="Телефон">
+            <label for="checkbox"></label>
+            <a class="feedback__link">Я согласен на обработку  персональных данных</a>
+          </div>
+        </form>
+      </div>
     </section>
   </main>
   <!-- <footer class="page-footer">

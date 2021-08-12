@@ -17,6 +17,11 @@
     padding-top: 50px;
     margin-left: 25px;
   }
+
+  @media (max-width: $mobile-width) {
+    font-size: 28px;
+    max-width: 290px;
+  }
 }
 
 .goods-service__list {
@@ -24,11 +29,21 @@
   justify-content: center;
   width: 100%;
   gap: 29px;
-  margin-top: 81px;
+  margin-top: 51px;
   flex-wrap: wrap;
 
   @media (max-width: $tablet-width) {
     flex-direction: column;
+    margin: 0 auto;
+    width: 93%;
+    margin-top: 51px;
+    gap: 46px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-top: 42px;
+    width: 90%;
+    gap: 30px;
   }
 }
 
@@ -36,26 +51,105 @@
   width: 100%;
   min-height: 938px;
   background-color: #1B2D37;
+
+  @media (max-width: $tablet-width) {
+    min-height: 1127px;
+  }
+
+
+  @media (max-width: $mobile-width) {
+    min-height: 1101px;
+  }
 }
 
-.goods-service__image {
-  opacity: 0.2;
-  width: 100%;
-  height: 100%;
-
-  /* @media (max-width: $tablet-width) {
-    width: 100%;
-    max-width: 720px;
-    height: 256px;
-  } */
+.goods-service__link {
+  display: block;
 }
 
 .goods-service__block {
-  position: relative;
   width: 370px;
   height: 620px;
-  overflow: hidden;
-  border: 1px solid;
+
+  @media (max-width: $tablet-width) {
+    width: 720px;
+    height: 256px;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 290px;
+  }
+}
+
+.goods-service__block--manafacturi {
+  position: relative;
+
+  &::before {
+    width: 370px;
+    height: 620px;
+    content: '';
+    position: absolute;
+    background-image: url('../../img/manafucture.png');
+    opacity: 0.2;
+
+    @media (max-width: $tablet-width) {
+      width: 715px;
+      height: 256px;
+      background-image: url('../../img/manafucture-tablet.png');
+    }
+
+    @media (max-width: $mobile-width) {
+      width: 290px;
+      background-image: url('../../img/manafucture-mobile.png');
+    }
+  }
+}
+
+.goods-service__block--mounting {
+  position: relative;
+
+  &::before {
+    width: 370px;
+    height: 620px;
+    content: '';
+    position: absolute;
+    background-image: url('../../img/mounting.png');
+    opacity: 0.2;
+
+    @media (max-width: $tablet-width) {
+      width: 720px;
+      height: 256px;
+      background-image: url('../../img/mounting-tablet.png');
+    }
+
+    @media (max-width: $mobile-width) {
+      width: 290px;
+      background-image: url('../../img/mounting-mobile.png');
+    }
+  }
+}
+
+.goods-service__block--accessories {
+  position: relative;
+
+  &::before {
+    width: 370px;
+    height: 620px;
+    content: '';
+    position: absolute;
+    background-image: url('../../img/accessories.png');
+    opacity: 0.2;
+
+    @media (max-width: $tablet-width) {
+      width: 720px;
+      height: 256px;
+      background-image: url('../../img/accessories-tablet.png');
+    }
+
+    @media (max-width: $mobile-width) {
+      width: 290px;
+      background-image: url('../../img/accessories-mobile.png');
+    }
+  }
 }
 
 .goods-service__block p {
@@ -69,13 +163,47 @@
   width: 160px;
   top: 30px;
   left: 43px;
+  z-index: 120;
 
+  @media (max-width: $tablet-width) {
+    top: 20px;
+  }
+}
+
+.goods-service__block--accessories p {
+  @media (max-width: $tablet-width) {
+    top: 30px;
+  }
+
+  @media (max-width: $mobile-width) {
+    top: 10px;
+  }
 }
 
 .goods-service__cotainer {
   position: absolute;
   top: 556px;
   left: 306px;
+
+  @media (max-width: $tablet-width) {
+    top: 193px;
+    left: 656px;
+  }
+
+  @media (max-width: $mobile-width) {
+    left: 226px;
+  }
+}
+
+.goods-service__cotainer--manafacturi {
+  @media (max-width: $tablet-width) {
+    top: 193px;
+    left: 651px;
+  }
+
+  @media (max-width: $mobile-width) {
+    left: 226px;
+  }
 }
 
 .goods-service__button {
@@ -84,6 +212,8 @@
   width: 63px;
   height: 63px;
   background-color: #00B2FF;
+  border: none;
+  outline: none;
 
   &::before {
     content: '';
