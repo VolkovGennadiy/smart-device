@@ -7,6 +7,10 @@
   margin: 0 auto;
   z-index: 20;
 
+  @media (max-width: $tablet-width) {
+    min-height: 664px;
+  }
+
   @media (max-width: $mobile-width) {
     min-height: 640px;
   }
