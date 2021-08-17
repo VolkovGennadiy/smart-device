@@ -1,0 +1,20 @@
+.page-header {
+  min-height: 878px;
+  background-color: #1B2D37;
+  background-image: url('../img/header-background.png');
+  background-repeat: no-repeat;
+  overflow: hidden;
+
+  @media (max-width: $tablet-width) {
+    min-height: 686px;
+  }
+
+  @media (max-width: $mobile-width) {
+    min-height: 647px;
+  }
+}
+
+
+.benefits__image {
+  fill: red;
+}

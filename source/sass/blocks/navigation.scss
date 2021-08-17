@@ -1,0 +1,121 @@
+.navigation  {
+  display: flex;
+  width: 100%;
+  max-width: 1475px;
+  margin: 0 auto;
+  padding-top: 32px;
+  justify-content: space-between;
+
+  @media (max-width: $tablet-width) {
+    padding-top: 20px;
+  }
+}
+
+.navigation__logo {
+  margin-left: 30px;
+
+  @media (max-width: $tablet-width) {
+    margin-left: 25px;
+  }
+
+  @media (max-width: $mobile-width) {
+    background-image: url('../img/logo-mobile.png');
+    width: 38px;
+    height: 38px;
+    margin-left: 17px;
+    margin-top: -3px;
+  }
+}
+
+.navigation__logo img {
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
+}
+
+.navigation__list {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-right: 35px;
+  width: 657px;
+  flex-wrap: wrap;
+
+  @media (max-width: $tablet-width) {
+    width: 90px;
+    gap: 0;
+    margin-right: 17px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-right: 0;
+  }
+}
+
+.navigation__link {
+  font-family: 'PT Mono', 'Arial', sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  color: #ffffff;
+}
+
+.navigation__link span {
+  @media (max-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.navigation__img {
+  margin-right: 7px;
+
+  @media (max-width: $tablet-width) {
+    width: 23px;
+    height: 23px;
+  }
+}
+
+.navigation__img--email {
+  margin-right: 9px;
+
+  @media (max-width: $mobile-width) {
+    margin-left: 9px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin: 0;
+  }
+}
+
+.navigation__link--tell {
+  margin-left: 38px;
+
+  @media (max-width: $tablet-width) {
+    margin-left: 28px;
+  }
+}
+
+
+.navigation__item:hover {
+  opacity: 0.5;
+}
+
+.navigation__button {
+  font-family: 'Roboto Condensed Bold', 'Arial', sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: center;
+  border: 1px solid #FFFFFF;
+  border-radius: 5px;
+  padding: 15px 25px 13px 25px;
+  cursor: pointer;
+
+  @media (max-width: $tablet-width) {
+    display: none;
+  }
+}
+

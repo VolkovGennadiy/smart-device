@@ -1,0 +1,236 @@
+.goods-service h2 {
+  font-family: 'Roboto Condensed Regular', 'Arial', sans-serif;
+  font-size: 36px;
+  line-height: 51px;
+  color: #FFFFFF;
+  padding-top: 88px;
+  width: 95%;
+  max-width: 1174px;
+  margin: 0 auto;
+
+  @media (max-width: $tablet-width) {
+    font-size: 32px;
+    line-height: 140.62%;
+    max-width: 626px;
+    padding-top: 50px;
+    margin-left: 16px;
+    margin: 0 auto;
+    margin-left: 25px;
+  }
+
+  @media (max-width: $mobile-width) {
+    font-size: 28px;
+    max-width: 274px;
+    margin: 0 auto;
+  }
+}
+
+.goods-service__list {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 29px;
+  margin-top: 51px;
+  flex-wrap: wrap;
+
+  @media (max-width: $tablet-width) {
+    flex-direction: column;
+    margin: 0 auto;
+    width: 720px;
+    margin-top: 51px;
+    gap: 46px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-top: 42px;
+    align-content: center;
+    gap: 30px;
+    width: 300px;
+  }
+}
+
+.goods-service {
+  width: 100%;
+  min-height: 938px;
+  background-color: #1B2D37;
+  
+
+  @media (max-width: $tablet-width) {
+    min-height: 1127px;
+  }
+
+  @media (max-width: $mobile-width) {
+    min-height: 1101px;
+  }
+}
+
+.goods-service__link {
+  display: block;
+}
+
+.goods-service__block {
+  width: 370px;
+  height: 620px;
+
+  @media (max-width: $tablet-width) {
+    width: 720px;
+    height: 256px;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 290px;
+  }
+}
+
+.goods-service__block--manafacturi {
+  position: relative;
+
+  &::before {
+    width: 370px;
+    height: 620px;
+    content: '';
+    position: absolute;
+    background-image: url('../img/manafucture.png');
+    opacity: 0.2;
+
+    @media (max-width: $tablet-width) {
+      width: 715px;
+      height: 256px;
+      background-image: url('../img/manafucture-tablet.png');
+    }
+
+    @media (max-width: $mobile-width) {
+      width: 290px;
+      background-image: url('../img/manafucture-mobile.png');
+    }
+  }
+}
+
+.goods-service__block--mounting {
+  position: relative;
+
+  &::before {
+    width: 370px;
+    height: 620px;
+    content: '';
+    position: absolute;
+    background-image: url('../img/mounting.png');
+    opacity: 0.2;
+
+    @media (max-width: $tablet-width) {
+      width: 720px;
+      height: 256px;
+      background-image: url('../img/mounting-tablet.png');
+    }
+
+    @media (max-width: $mobile-width) {
+      width: 290px;
+      background-image: url('../img/mounting-mobile.png');
+    }
+  }
+}
+
+.goods-service__block--accessories {
+  position: relative;
+
+  &::before {
+    width: 370px;
+    height: 620px;
+    content: '';
+    position: absolute;
+    background-image: url('../img/accessories.png');
+    opacity: 0.2;
+
+    @media (max-width: $tablet-width) {
+      width: 720px;
+      height: 256px;
+      background-image: url('../img/accessories-tablet.png');
+    }
+
+    @media (max-width: $mobile-width) {
+      width: 290px;
+      background-image: url('../img/accessories-mobile.png');
+    }
+  }
+}
+
+.goods-service__block p {
+  position: absolute;
+  font-family: 'Roboto Condensed Regular', 'Arial', sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  color: #ffffff;
+  width: 160px;
+  top: 30px;
+  left: 43px;
+  z-index: 120;
+
+  @media (max-width: $tablet-width) {
+    top: 20px;
+  }
+
+  @media (max-width: $mobile-width) {
+    left: 34px;
+    top: 0;
+  }
+}
+
+.goods-service__block--accessories p {
+  @media (max-width: $tablet-width) {
+    top: 30px;
+  }
+
+  @media (max-width: $mobile-width) {
+    top: 10px;
+  }
+}
+
+.goods-service__cotainer {
+  position: absolute;
+  top: 556px;
+  left: 306px;
+
+  @media (max-width: $tablet-width) {
+    top: 193px;
+    left: 656px;
+  }
+
+  @media (max-width: $mobile-width) {
+    left: 226px;
+  }
+}
+
+.goods-service__cotainer--manafacturi {
+  @media (max-width: $tablet-width) {
+    top: 193px;
+    left: 651px;
+  }
+
+  @media (max-width: $mobile-width) {
+    left: 226px;
+  }
+}
+
+.goods-service__cotainer p {
+  position: absolute;
+  top: -17px;
+  left: 1px;
+  display: inline-block;
+  position: relative;
+  width: 62px;
+  height: 61px;
+  background-color: #00B2FF;
+  border: none;
+  outline: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-repeat: no-repeat;
+    background-image: url('../img/arrov-left.svg');
+    top: 29px;
+    left: 31px;
+  }
+}
