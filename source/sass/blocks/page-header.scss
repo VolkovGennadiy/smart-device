@@ -5,6 +5,10 @@
   background-repeat: no-repeat;
   overflow: hidden;
 
+  @media (min-resolution: 2dppx) {
+    background-image: url('../img/header-background2x.png');
+  }
+
   @media (max-width: $tablet-width) {
     min-height: 686px;
   }
