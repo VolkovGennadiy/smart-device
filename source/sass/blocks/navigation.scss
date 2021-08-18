@@ -37,13 +37,13 @@
   display: flex;
   align-items: center;
   gap: 50px;
-  margin-right: 35px;
+  margin-right: -38px;
   width: 657px;
   flex-wrap: wrap;
 
   @media (max-width: $tablet-width) {
     width: 90px;
-    gap: 0;
+    column-gap: 34px;
     margin-right: 17px;
   }
 
@@ -52,11 +52,50 @@
   }
 }
 
+.navigation__item {
+  @media (max-width: $tablet-width) {
+    width: 25px;
+    height: 25px;
+  }
+}
+
 .navigation__link {
+  position: relative;
   font-family: 'PT Mono', 'Arial', sans-serif;
   font-size: 16px;
   line-height: 18px;
   color: #ffffff;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 19px;
+    height: 15px;
+    background-image: url('../img/email.svg');
+    background-repeat: no-repeat;
+    left: -40px;
+
+    @media (max-width: $tablet-width) {
+      width: 25px;
+      height: 19px;
+      background-size: 100%;
+      left: 0;
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    padding: 20px;
+  }
+}
+
+.navigation__link--email {
+  margin-left: -34px;
+  margin-right: 34px;
+
+  @media (max-width: $tablet-width) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .navigation__link span {
@@ -65,32 +104,34 @@
   }
 }
 
-.navigation__img {
-  margin-right: 7px;
-
-  @media (max-width: $tablet-width) {
-    width: 23px;
-    height: 23px;
-  }
-}
-
-.navigation__img--email {
-  margin-right: 9px;
-
-  @media (max-width: $mobile-width) {
-    margin-left: 9px;
-  }
-
-  @media (max-width: $mobile-width) {
-    margin: 0;
-  }
-}
-
 .navigation__link--tell {
+  position: relative;
   margin-left: 38px;
 
+  &::before {
+    content: '';
+    position: absolute;
+    width: 19px;
+    height: 20px;
+    background-image: url('../img/phone.svg');
+    background-repeat: no-repeat;
+    left: -35px;
+
+    @media (max-width: $tablet-width) {
+      width: 24px;
+      height: 24px;
+      background-size: 100%;
+      left: 0;
+      top: 16px;
+    }
+
+    @media (max-width: $mobile-width) {
+      left: -7px;
+    }
+  }
+
   @media (max-width: $tablet-width) {
-    margin-left: 28px;
+    margin-left: 0;
   }
 }
 
@@ -100,7 +141,7 @@
 }
 
 .navigation__button {
-  font-family: 'Roboto Condensed Bold', 'Arial', sans-serif;
+  font-family: 'Roboto Condensed', 'Arial', sans-serif;
   font-weight: bold;
   font-size: 14px;
   line-height: 16px;
@@ -119,3 +160,8 @@
   }
 }
 
+.navigation__item--button {
+  @media (max-width: $tablet-width) {
+    display: none;
+  }
+}

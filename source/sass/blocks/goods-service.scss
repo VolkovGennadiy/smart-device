@@ -1,5 +1,6 @@
 .goods-service h2 {
-  font-family: 'Roboto Condensed Regular', 'Arial', sans-serif;
+  font-family: 'Roboto Condensed', 'Arial', sans-serif;
+  font-weight: normal;
   font-size: 36px;
   line-height: 51px;
   color: #FFFFFF;
@@ -53,7 +54,6 @@
   width: 100%;
   min-height: 938px;
   background-color: #1B2D37;
-  
 
   @media (max-width: $tablet-width) {
     min-height: 1127px;
@@ -69,8 +69,23 @@
 }
 
 .goods-service__block {
+  position: relative;
   width: 370px;
   height: 620px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 63px;
+    height: 63px;
+    background-image: url('../img/service-decorativ.svg');
+    right: 0;
+    top: 558px;
+
+    @media (max-width: $tablet-width) {
+      top: 193px;
+    }
+  }
 
   @media (max-width: $tablet-width) {
     width: 720px;
@@ -156,7 +171,7 @@
 
 .goods-service__block p {
   position: absolute;
-  font-family: 'Roboto Condensed Regular', 'Arial', sans-serif;
+  font-family: 'Roboto Condensed', 'Arial', sans-serif;
   font-size: 20px;
   line-height: 30px;
   color: #ffffff;
@@ -182,55 +197,5 @@
 
   @media (max-width: $mobile-width) {
     top: 10px;
-  }
-}
-
-.goods-service__cotainer {
-  position: absolute;
-  top: 556px;
-  left: 306px;
-
-  @media (max-width: $tablet-width) {
-    top: 193px;
-    left: 656px;
-  }
-
-  @media (max-width: $mobile-width) {
-    left: 226px;
-  }
-}
-
-.goods-service__cotainer--manafacturi {
-  @media (max-width: $tablet-width) {
-    top: 193px;
-    left: 651px;
-  }
-
-  @media (max-width: $mobile-width) {
-    left: 226px;
-  }
-}
-
-.goods-service__cotainer p {
-  position: absolute;
-  top: -17px;
-  left: 1px;
-  display: inline-block;
-  position: relative;
-  width: 62px;
-  height: 61px;
-  background-color: #00B2FF;
-  border: none;
-  outline: none;
-
-  &::before {
-    content: '';
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background-repeat: no-repeat;
-    background-image: url('../img/arrov-left.svg');
-    top: 29px;
-    left: 31px;
   }
 }

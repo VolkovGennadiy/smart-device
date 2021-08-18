@@ -38,7 +38,7 @@
 
   @media (max-width: $tablet-width) {
     display: block;
-    font-family: 'PT Mono', 'Arial', sans-serif;
+    font-family: 'PT Mono', 'Courier', monospace;
     font-size: 13px;
     line-height: 24px;
     letter-spacing: 0.04em;
@@ -46,12 +46,57 @@
     color: #1B2D37;
     opacity: 0.5;
     margin-top: 17px;
-    margin-left: 15px;
+    margin-left: 13px;
   }
 
   @media (max-width: $mobile-width) {
     margin: 0 auto;
-    margin-top: -10px;
+    margin-top: -12px;
+  }
+}
+
+.footer-navigation__link--facebook {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 27px;
+    height: 27px;
+    background-image: url('../img/facabook.svg');
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+  }
+}
+
+.footer-navigation__link--classmates {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 27px;
+    height: 27px;
+    background-image: url('../img/classmates.svg');
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+  }
+}
+
+.footer-navigation__link--vk {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 27px;
+    height: 27px;
+    background-image: url('../img/vk.svg');
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
   }
 }
 
@@ -65,22 +110,25 @@
   @media (max-width: $mobile-width) {
     margin: 0 auto;
     margin-top: 27px;
-  }
+  } 
 }
 
 .footer-navigation__list {
   display: flex;
   margin-top: 49px;
-  gap: 15px;
+  gap: 43px;
 
   @media (max-width: $tablet-width) {
     margin-top: 12px;
-    margin-right: 25px;
+    margin-right: 50px;
   }
 
   @media (max-width: $mobile-width) {
     margin: 0 auto;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
+    gap: 43px;
+    width: 112px;
+
   }
 }
 
@@ -154,7 +202,7 @@
     display: block;
     width: 20px;
     height: 20px;
-    background-image: url('../img/minus.svg');
+    background-image: url('../img/plus.svg');
     border: none;
     background-repeat: no-repeat;
     background-position: center;
@@ -169,7 +217,7 @@
   display: block;
   width: 20px;
   height: 20px;
-  background-image: url('../img/plus.svg');
+  background-image: url('../img/minus.svg');
   border: none;
   background-repeat: no-repeat;
   background-position: center;
@@ -194,7 +242,8 @@
 }
 
 .footer-navigation__section h2, .footer-navigation__ofice h2 {
-  font-family: 'Roboto Condensed Regular', 'Arial', sans-serif;
+  font-family: 'Roboto Condensed', 'Arial', sans-serif;
+  font-weight: 400;
   font-size: 15px;
   line-height: 16px;
   display: flex;
@@ -221,8 +270,8 @@
   }
 }
 
-.footer-navigation__section-link, .footer-navigation__ofice-link {
-  font-family: 'PT Mono', 'Arial', sans-serif;
+.footer-navigation__section-link, .footer-navigation__ofice-link, .footer-navigation__ofice-link span {
+  font-family: 'PT Mono', 'Courier', monospace;
   font-size: 15px;
   line-height: 25px;
   color: #1B2D37;
@@ -248,7 +297,7 @@
 
 .footer-navigation__ofice-list {
   @media (max-width: $mobile-width) {
-    display: block;
+    display: none;
     margin-left: 15px;
     margin-top: 7px;
     min-height: 151px;
@@ -256,6 +305,10 @@
 }
 
 .footer-navigation__section-list--nojs {
+  display: block;
+}
+
+.footer-navigation__ofice-list--nojs {
   display: block;
 }
 
@@ -297,7 +350,7 @@
 }
 
 .footer-copiraiting__item span {
-  font-family: 'PT Mono', 'Arial', sans-serif;
+  font-family: 'PT Mono', 'Courier', monospace;
   font-size: 13px;
   line-height: 24px;
   letter-spacing: 0.04em;
@@ -305,6 +358,36 @@
   color: #1B2D37;
   opacity: 0.5;
   margin-right: 74px;
+}
+
+.footer-copiraiting__link {
+  font-family: 'PT Mono', 'Courier', monospace;
+  font-size: 13px;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #1B2D37;
+  opacity: 0.5;
+  margin-right: 74px;
+
+  @media (max-width: $mobile-width) {
+    margin-right: 0;
+  }
+}
+
+.footer-copiraiting__link--dev {
+  margin-right: 20px;
+
+  @media (max-width: $tablet-width) {
+    margin-right: 6px;
+    margin-top: 9px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-right: 0;
+    margin-top: 21px;
+    margin-left: 57px;
+  }
 }
 
 .footer-copiraiting__item--confidition span {
@@ -324,8 +407,7 @@
 }
 
 .footer-copiraiting__block span {
-  font-family: 'PT Mono', 'Arial', sans-serif;
-  font-size: 13px;
+  font-family: 'PT Mono', 'Courier', monospace;
   line-height: 24px;
   letter-spacing: 0.04em;
   text-transform: uppercase;

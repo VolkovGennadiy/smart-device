@@ -1,13 +1,42 @@
 .feedback {
+  position: relative;
   min-height: 670px;
   background-color: #00b2ff;
   width: 100%;
-  justify-content: center;
-  display: flex;
   margin: 0 auto;
   z-index: 20;
 
+  &::before {
+    content: '';
+    position: absolute;
+    width: 511px;
+    height: 288px;
+    background-image: url('../img/paper-airplane.png');
+    top: 24%;
+    right: 55.2%;
+
+    @media (max-width: $tablet-width) {
+      display: none;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 766px;
+    height: 644px;
+    background-image: url('../img/feedback-triangle.svg');
+    top: -9%;
+    right: 51%;
+    z-index: -1;
+
+    @media (max-width: $tablet-width) {
+      display: none;
+    }
+  }
+
   @media (max-width: $tablet-width) {
+    display: flex;
     min-height: 664px;
   }
 
@@ -16,59 +45,31 @@
   }
 }
 
-.feedback__image {
-  position: relative;
-  width: 41%;
-  max-width: 570px;
-
-  &::before {
-    content: '';
-    position: absolute;
-    width: 640px;
-    height: 640px;
-    background-image: url('../img/triangle-big.svg');
-    top: -60px;
-    left: -166px;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    width: 373px;
-    height: 378px;
-    background-image: url('../img/triangle-small.svg');
-    top: 204px;
-    left: -200px;
-    background-repeat: no-repeat;
-  }
-
-  @media (max-width: $tablet-width) {
-    display: none;
-  }
-}
-
-.feedback__image img {
-  position: absolute;
-  top: 24%;
-  left: -4.5%;
-}
-
 .feedback__connection {
-  margin-top: 61px;
+  position: absolute;
   z-index: 22;
   background-color: #00b2ff;
+  top: 9%;
+  right: 19.6%;
 
   @media (max-width: $tablet-width) {
-    margin-top: 50px;
+    top: 7.8%;
+    margin: 0 auto;
+    width: 598px;
+    right: 0;
+    left: 0px;
   }
 
   @media (max-width: $mobile-width) {
     width: 300px;
+    right: 0;
+    left: 0px;
   }
 }
 
 .feedback__connection h2 {
-  font-family: 'Roboto Condensed Regular', 'Arial', sans-serif;
+  font-family: 'Roboto Condensed', 'Arial', sans-serif;
+  font-weight: normal;
   font-size: 36px;
   line-height: 51px;
   color: #ffffff;
@@ -82,14 +83,14 @@
   }
 
   @media (max-width: $mobile-width) {
-   font-size: 28px;
-   line-height: 140.62%;
-   margin-top: -20px;
+    font-size: 28px;
+    line-height: 140.62%;
+    margin-top: -20px;
   }
 }
 
 .feedback__connection p {
-  font-family: 'PT Mono', 'Arial', sans-serif;
+  font-family: 'PT Mono', 'Courier', monospace;
   font-size: 16px;
   line-height: 22px;
   color: #ffffff;
@@ -126,6 +127,24 @@
   }
 }
 
+.feedback__block {
+  position: relative;
+}
+
+.feedback__block label {
+  position: absolute;
+  font-family: 'PT Mono', 'Courier', monospace;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ffffff;
+  left: 16px;
+  top: 13px;
+}
+
+.feedback__label--none {
+  display: none;
+}
+
 .feedback__block input {
   width: 252px;
   height: 50px;
@@ -133,16 +152,16 @@
   border: none;
   outline: none;
   padding-left: 16px;
-  font-family: 'PT Mono', 'Arial', sans-serif;
+  font-family: 'PT Mono', 'Courier', monospace;
   font-size: 16px;
   line-height: 22px;
   color: #ffffff;
+  z-index: 3000;
 
-  &::placeholder {
-    font-family: 'PT Mono', 'Arial', sans-serif;
-    font-size: 16px;
-    line-height: 22px;
-    color: #ffffff;
+  &:focus {
+    & + label {
+      opacity: 0;
+    }
   }
 
   @media (max-width: $tablet-width) {
@@ -163,16 +182,15 @@
   resize: none;
   padding-left: 16px;
   padding-top: 10px;
-  font-family: 'PT Mono', 'Arial', sans-serif;
+  font-family: 'PT Mono', 'Courier', monospace;
   font-size: 16px;
   line-height: 22px;
   color: #ffffff;
 
-  &::placeholder {
-    font-family: 'PT Mono', 'Arial', sans-serif;
-    font-size: 16px;
-    line-height: 22px;
-    color: #ffffff;
+  &:focus {
+    & + label {
+      opacity: 0;
+    }
   }
 
   @media (max-width: $tablet-width) {
@@ -187,7 +205,7 @@
 }
 
 .feedback__send {
-  font-family: 'Roboto Condensed Bold', 'Arial', sans-serif;
+  font-family: 'Roboto Condensed', 'Arial', sans-serif;
   width: 270px;
   height: 46px;
   background: none;
@@ -215,8 +233,8 @@
 }
 
 .feedback__block--check {
-  width: 230px;
-  margin-left: 8px;
+  width: 250px;
+  margin-left: 9px;
   display: flex;
   margin-top: -11px;
 
@@ -235,7 +253,7 @@
 }
 
 .feedback__link {
-  font-family: 'PT Mono', 'Arial', sans-serif;
+  font-family: 'PT Mono', 'Courier', monospace;
   font-size: 14px;
   line-height: 16px;
   color: #ffffff;
@@ -244,8 +262,8 @@
   margin-top: 17px;
 
   @media (max-width: $tablet-width) {
-    margin-left: 20px;
-    margin-top: 20px;
+    margin-left: 18px;
+    margin-top: 14px;
   }
 
   @media (max-width: $mobile-width) {
@@ -262,6 +280,7 @@
   &::before {
     content: '';
     display: inline-block;
+    vertical-align: middle;
     width: 14px;
     height: 14px;
     flex-shrink: 0;

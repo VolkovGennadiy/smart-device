@@ -22,6 +22,7 @@
 
 .modal__close {
   display: inline-block;
+  vertical-align: middle;
   width: 20px;
   height: 20px;
   background-image: url('../img/modal-close.svg');
@@ -31,6 +32,9 @@
   right: 3%;
   top: 3%;
   z-index: 1200;
+  border: none;
+  background-color: #00b2ff;
+  cursor: pointer;
 }
 
 .modal__description h2 {
@@ -44,7 +48,7 @@
 }
 
 .modal__description p {
-  font-family: 'PT Mono', 'Arial', sans-serif;
+  font-family: 'PT Mono', 'Courier', monospace;
   font-size: 16px;
   line-height: 22px;
   color: #ffffff;
@@ -62,27 +66,40 @@
   margin-top: 31px;
 }
 
-.modal__input {
+.modal__block {
+  position: relative;
+}
+
+.modal__block label {
+  position: absolute;
+  font-family: 'PT Mono', 'Courier', monospace;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ffffff;
+  left: 0;
+  top: 0;
+}
+
+.modal__block input {
   width: 408px;
   height: 50px;
   background-color: rgba(255, 255, 255, 0.1);
   border: none;
   outline: none;
   padding-left: 20px;
-  font-family: 'PT Mono', 'Arial', sans-serif;
+  font-family: 'PT Mono', 'Courier', monospace;
   font-size: 16px;
   line-height: 22px;
   color: #ffffff;
 
-  &::placeholder {
-    font-family: 'PT Mono', 'Arial', sans-serif;
-    font-size: 16px;
-    line-height: 22px;
-    color: #ffffff;
+  &:focus {
+    & + label {
+      opacity: 0;
+    }
   }
 }
 
-.modal__text {
+.modal__block textarea {
   width: 408px;
   height: 100px;
   background-color: rgba(255, 255, 255, 0.1);
@@ -91,16 +108,15 @@
   resize: none;
   padding-left: 20px;
   padding-top: 10px;
-  font-family: 'PT Mono', 'Arial', sans-serif;
+  font-family: 'PT Mono', 'Courier', monospace;
   font-size: 16px;
   line-height: 22px;
   color: #ffffff;
 
-  &::placeholder {
-    font-family: 'PT Mono', 'Arial', sans-serif;
-    font-size: 16px;
-    line-height: 22px;
-    color: #ffffff;
+  &:focus {
+    & + label {
+      opacity: 0;
+    }
   }
 }
 
@@ -123,7 +139,7 @@
 }
 
 .modal__link {
-  font-family: 'PT Mono', 'Arial', sans-serif;
+  font-family: 'PT Mono', 'Courier', monospace;
   font-size: 14px;
   line-height: 16px;
   color: #FFFFFF;
@@ -153,6 +169,7 @@
   &::before {
     content: '';
     display: inline-block;
+    vertical-align: middle;
     width: 14px;
     height: 14px;
     flex-shrink: 0;

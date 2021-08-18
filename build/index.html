@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="Сервис для производства печатных плат любой сложности"> 
+  <meta name="description" content="Сервис для производства печатных плат любой сложности">
   <title>Smart-device</title>
   <link rel="preload" href="/fonts/PTMono.woff2" as="font" crossorigin="">
   <link rel="preload" href="/fonts/RobotoCondensedBold.woff2" as="font" crossorigin="">
@@ -50,19 +50,17 @@
       </a>
       <ul class="navigation__list no-bulites">
         <li class="navigation__item navigation__item--email">
-          <a class="navigation__link" href="mailto:info@sd.ru">
-            <img class="navigation__img navigation__img--email" src="img/email.svg" alt="Изоброжение конверта для обратной связи">
+          <a class="navigation__link navigation__link--email" href="mailto:info@sd.ru">
             <span>info@sd.ru</span>
           </a>
         </li>
         <li class="navigation__item navigation__item--tell">
           <a class="navigation__link navigation__link--tell" href="tel:+7(495)0005252">
-            <img class="navigation__img" src="img/phone.svg" alt="Изображение телефоной труубки для обратной связи">
             <span>+7 (495) 000 52 52</span>
           </a>
         </li>
         <li class="navigation__item navigation__item--button">
-          <a class="navigation__button">Заказать звонок</a>
+          <a class="navigation__button" href="#">Заказать звонок</a>
         </li>
       </ul>
     </section>
@@ -71,13 +69,17 @@
         <h1>Печатные платы</h1>
         <p>производство и монтаж, поставка комплектующих, блоков и модулей</p>
         <a class="main-block__link" href="#feedbackid">Получить бесплатную консультацию</a>
-        <a class="main-block__link-mobile">Бесплатная консультация</a>
+        <a class="main-block__link-mobile" href="#">Бесплатная консультация</a>
         <div class="main-block__scroll">
           <a class="main-block__scroll-link" href="#benefitsid">Скролл вниз</a>
         </div>
       </div>
       <div class="main-block__image">
-        <img src="img/pay.png" width="705" height="515" alt="Изображение печатной платы">
+        <picture>
+          <source type="image/webp" srcset="img/pay.webp 1x, img/pay2x.webp 2x">
+          <!-- 1х: 705px; 2x: 1410px -->
+          <img src="img/pay.png" srcset="img/pay.png 1x" width="705" height="515" alt="Изображение печатной платы">
+        </picture>
       </div>
     </section>
   </header>
@@ -116,12 +118,16 @@
           </svg>
           <p>Персонализация стоимости</p>
           <span>Мы  подбираем определенную фабрику, поставщиков,
-             вид доставки, чтобы установить ту цену, которая Вас устраивает.</span>
+            вид доставки, чтобы установить ту цену, которая Вас устраивает.</span>
         </li>
       </ul>
     </section>
     <section class="about">
-      <img src="img/about-logo.png" width="220" height="318" alt="Изоброжение логотипа в блоке о компании. Отображает год - 2005">
+      <picture>
+        <source type="image/webp" srcset="img/about-logo.webp 1x, img/about-logo2x.webp 2x">
+        <!-- 1х: 215px; 2x: 430px -->
+        <img src="img/about-logo.png" srcset="img/about-logo.png 1x" width="215" height="318" alt="Изоброжение логотипа в блоке о компании. Отображает год - 2005">
+      </picture>
       <ul class="about__list no-bulites">
         <li class="about__item">
           <p>О компании</p>
@@ -143,7 +149,7 @@
           </p>
         </li>
         <li class="about__item about__item--link">
-          <a class="about__link">Подробнее</a>
+          <a class="about__link" href="#">Подробнее</a>
         </li>
       </ul>
     </section>
@@ -154,9 +160,6 @@
           <a class="goods-service__link" href="#">
             <div class="goods-service__block goods-service__block--manafacturi">
               <p>Производство печатных плат</p>
-              <div class="goods-service__cotainer goods-service__cotainer--manafacturi">
-                <p class="goods-service__button"></p>
-              </div>
             </div>
           </a>
         </li>
@@ -164,11 +167,6 @@
           <a class="goods-service__link" href="#">
             <div class="goods-service__block goods-service__block--mounting">
               <p>Монтаж печатных плат</p>
-              <div class="goods-service__cotainer">
-                <p class="goods-service__button">
-                  <span class="visually-hidden">Кнопка</span>
-                </p>
-              </div>
             </div>
           </a>
         </li>
@@ -176,41 +174,34 @@
           <a class="goods-service__link" href="#">
             <div class="goods-service__block goods-service__block--accessories">
               <p>Комплектующие для светотехники</p>
-              <div class="goods-service__cotainer">
-                <p class="goods-service__button">
-                  <span class="visually-hidden">Кнопка</span>
-                </p>
-              </div>
             </div>
           </a>
         </li>
       </ul>
     </section>
     <section class="feedback" id="feedbackid">
-      <div class="feedback__image">
-        <img src="img/paper_airplane.png" width="511" height="288" alt="Изображение бумажного самолета для блока обратной связи">
-      </div>
       <div class="feedback__connection">
         <h2>Остались вопросы? Задайте их нам!</h2>
         <p>Мы проконсультируем Вас бесплатно</p>
         <form class="feedback__form" action="https://echo.htmlacademy.ru" method="post">
           <div class="feedback__block">
-            <label for="name"></label>
-            <input type="text" id="name" name="name" placeholder="Имя" required="">
+            <input type="text" id="feedback__input" name="name" required="">
+            <label class="feedback__label" for="feedback__input">Имя</label>
           </div>
           <div class="feedback__block">
-            <label for="tell"></label>
-            <input class="feedback__tell" type="tel" id="tell" name="tell" placeholder="Телефон" required="">
+            <input type="tel" id="feedback__tell" name="tell" required="">
+            <label class="feedback__label feedback__label--tell" for="feedback__tell">Телефон</label>
           </div>
           <div class="feedback__block">
-            <label for="text"></label>
-            <textarea id="text" name="text" placeholder="Ваш вопрос" required=""></textarea>
+            <textarea id="feedback__text" name="text" required=""></textarea>
+            <label class="feedback__label feedback__label--text" for="text">Ваш вопрос</label>
           </div>
           <button class="feedback__send" type="submit">Задать вопрос</button>
-          <div class="feedback__block feedback__block--check">
-            <input type="checkbox" id="checkbox" name="checkbox" required="">
-            <label for="checkbox"></label>
-            <a class="feedback__link">Я согласен на обработку  персональных данных</a>
+          <div class="feedback__block--check">
+            <input type="checkbox" id="checkbox" name="checkbox" required="" checked="">
+            <label for="checkbox">
+              <a class="feedback__link" href="#">Я согласен на обработку  персональных данных</a>
+            </label>
           </div>
         </form>
       </div>
@@ -225,18 +216,18 @@
         <span>1999-2018 SD Service Devices</span>
         <ul class="footer-navigation__list no-bulites">
           <li class="footer-navigation__item">
-            <a class="footer-navigation__link">
-              <img src="img/facabook.svg" width="27" height="27" alt="Логотип социальной сети Фейсбук">
+            <a class="footer-navigation__link footer-navigation__link--facebook" href="#">
+              <span class="visually-hidden">facebook</span>
             </a>
           </li>
           <li class="footer-navigation__item">
-            <a class="footer-navigation__link">
-              <img src="img/classmates.svg" width="27" height="27" alt="Логотип социальной сети Одноклассники">
+            <a class="footer-navigation__link footer-navigation__link--classmates" href="#">
+              <span class="visually-hidden">Одноклассники</span>
             </a>
           </li>
           <li class="footer-navigation__item">
-            <a class="footer-navigation__link">
-              <img src="img//vk.svg" width="27" height="27" alt="Логотип социальной сети Вконтакте">
+            <a class="footer-navigation__link footer-navigation__link--vk" href="#">
+              <span class="visually-hidden">Вконтакте</span>
             </a>
           </li>
         </ul>
@@ -244,48 +235,52 @@
       <div class="footer-navigation__section">
         <div class="footer-navigation__section-block">
           <h2>Разделы сайта</h2>
-          <button class="footer-navigation__section-button" type="button"></button>
+          <button class="footer-navigation__section-button" type="button">
+            <span class="visually-hidden">Развернуть</span>
+          </button>
         </div>
         <ul class="footer-navigation__section-list footer-navigation__section-list--nojs no-bulites">
           <li class="footer-navigation__section-item">
-            <a class="footer-navigation__section-link">О компании</a>
+            <a class="footer-navigation__section-link" href="#">О компании</a>
           </li>
           <li class="footer-navigation__section-item">
-            <a class="footer-navigation__section-link">Продукты</a>
+            <a class="footer-navigation__section-link" href="#">Продукты</a>
           </li>
           <li class="footer-navigation__section-item">
-            <a class="footer-navigation__section-link">Производство печатных плат</a>
+            <a class="footer-navigation__section-link" href="#">Производство печатных плат</a>
           </li>
           <li class="footer-navigation__section-item">
-            <a class="footer-navigation__section-link">Монтаж печатных плат</a>
+            <a class="footer-navigation__section-link" href="#">Монтаж печатных плат</a>
           </li><li class="footer-navigation__section-item">
-            <a class="footer-navigation__section-link">Комплектующие</a>
+            <a class="footer-navigation__section-link" href="#">Комплектующие</a>
           </li>
           <li class="footer-navigation__section-item">
-            <a class="footer-navigation__section-link">Доставка</a>
+            <a class="footer-navigation__section-link" href="#">Доставка</a>
           </li>
           <li class="footer-navigation__section-item">
-            <a class="footer-navigation__section-link">Контакты</a>
+            <a class="footer-navigation__section-link" href="#">Контакты</a>
           </li>
         </ul>
       </div>
       <div class="footer-navigation__ofice">
         <div class="footer-navigation__ofice-block">
           <h2>Наш офис</h2>
-          <button class="footer-navigation__section-button footer-navigation__section-button--ofice" type="button"></button>
+          <button class="footer-navigation__section-button footer-navigation__section-button--ofice" type="button">
+            <span class="visually-hidden">Развернуть</span>
+          </button>
         </div>
-        <ul class="footer-navigation__ofice-list no-bulites">
+        <ul class="footer-navigation__ofice-list footer-navigation__ofice-list--nojs no-bulites">
           <li class="footer-navigation__ofice-item">
-            <a class="footer-navigation__ofice-link">г. Мытищи, Олимпийский проспект, д.10</a>
+            <span class="footer-navigation__ofice-link" href="#">г. Мытищи, Олимпийский проспект, д.10</span>
           </li>
           <li class="footer-navigation__ofice-item">
-            <a class="footer-navigation__ofice-link">+7 (495) 589-40-50</a>
+            <a class="footer-navigation__ofice-link" href="tel:+7(495)5894050">+7 (495) 589-40-50</a>
           </li>
           <li class="footer-navigation__ofice-item">
-            <a class="footer-navigation__ofice-link"> +7 (925) 003-87-67</a>
+            <a class="footer-navigation__ofice-link" href="tel:+7(925)0038767"> +7 (925) 003-87-67</a>
           </li>
           <li class="footer-navigation__ofice-item">
-            <a class="footer-navigation__ofice-link"> +7 (926) 926-080-79</a>
+            <a class="footer-navigation__ofice-link" href="tel:+7(926)92608079"> +7 (926) 926-080-79</a>
           </li>
         </ul>
       </div>
@@ -300,39 +295,40 @@
             <span>1999-2018 SD Service Devices</span>
           </li>
           <li class="footer-copiraiting__item footer-copiraiting__item--confidition">
-            <span>Условия конфиденциальности</span>
+            <a class="footer-copiraiting__link" href="#">Условия конфиденциальности</a>
           </li>
         </ul>
-        <span>Developed by wow studio</span>
+        <a class="footer-copiraiting__link footer-copiraiting__link--dev" href="#">Developed by wow studio</a>
       </div>
     </section>
   </footer>
   <div class="modal">
-    <a class="modal__close" href="#">
+    <button type="button" class="modal__close" href="#">
       <span class="visually-hidden">Закрыть</span>
-    </a>
+    </button>
     <div class="modal__description">
       <h2>Закажите звонок</h2>
       <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
     </div>
     <form class="modal__form" action="https://echo.htmlacademy.ru" method="post">
       <div class="modal__block">
-        <label class="modal__label" for="namemodal"></label>
-        <input class="modal__input" type="text" id="namemodal" name="yourname" placeholder="Имя" required="">
+        <input type="text" id="modal__name" name="modal__name" required="">
+        <label class="modal__label modal__label--name" for="modal__name">Имя</label>
       </div>
       <div class="modal__block">
-        <label class="modal__label" for="tellmodal"></label>
-        <input class="modal__input modal__input--tell" type="tel" id="tellmodal" name="tell" placeholder="Телефон" required="">
+        <input id="modal__tell" name="modal__tell" required="">
+        <label class="modal__label modal__label--tell" for="modal__tell">Телефон</label>
       </div>
       <div class="modal__block">
-        <label class="modal__label" for="textmodal"></label>
-        <textarea class="modal__text" id="textmodal" name="text" placeholder="Ваш вопрос" required=""></textarea>
+        <textarea id="modal__text" name="modal__text" required=""></textarea>
+        <label class="modal__label modal__label--text" for="modal__text">Ваш вопрос</label>
       </div>
       <button class="modal__send" type="submit">Отправить</button>
-      <div class="modal__block modal__block--check">
-        <input type="checkbox" id="checkboxmodal" name="checkbox" required="">
-        <label for="checkboxmodal"></label>
-        <a class="modal__link">Я согласен на обработку  персональных данных</a>
+      <div class="modal__block--check">
+        <input type="checkbox" id="checkboxmodal" name="checkbox" required="" checked="">
+        <label for="checkboxmodal">
+          <a class="modal__link" href="#">Я согласен на обработку  персональных данных</a>
+        </label>
       </div>
     </form>
   </div>
