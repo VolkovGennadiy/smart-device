@@ -127,6 +127,11 @@
   @media (max-width: $mobile-width) {
     margin-left: 9px;
   }
+
+  &:hover {
+    border: 1px solid #000fff;
+    color: #000fff;
+  }
 }
 
 .about__item--link {
