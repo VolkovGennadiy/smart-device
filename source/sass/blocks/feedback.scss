@@ -232,11 +232,16 @@
   }
 }
 
-.feedback__block--check {
+.feedback__block-check {
   width: 250px;
   margin-left: 9px;
   display: flex;
   margin-top: -11px;
+
+  @media (max-width: $tablet-width) {
+    margin-left: -7px;
+    margin-top: -24px;
+  }
 
   @media (max-width: $mobile-width) {
     margin-left: 0;
@@ -244,7 +249,7 @@
   }
 }
 
-.feedback__block--check input {
+.feedback__block-check input {
   width: 27px;
   height: 25px;
   position: absolute;
@@ -252,14 +257,14 @@
   opacity: 0;
 }
 
-.feedback__link {
+.feedback__block-check label {
   font-family: 'PT Mono', 'Courier', monospace;
   font-size: 14px;
   line-height: 16px;
   color: #ffffff;
   opacity: 0.8;
-  margin-left: 15px;
-  margin-top: 17px;
+  margin-left: 0;
+  margin-top: 3px;
 
   @media (max-width: $tablet-width) {
     margin-left: 18px;
@@ -267,12 +272,17 @@
   }
 
   @media (max-width: $mobile-width) {
-    margin-left: 17px;
-    margin-top: 18px;
+    margin-left: -1px;
+    margin-top: 5px;
   }
 }
 
-.feedback__block--check input+label {
+.feedback__block-check span {
+  margin-left: 17px;
+  margin-top: 11px;
+}
+
+.feedback__block-check input+label {
   display: inline-flex;
   align-items: center;
   user-select: none;
@@ -292,6 +302,6 @@
   }
 }
 
-.feedback__block--check input:checked+label::before {
+.feedback__block-check input:checked+label::before {
   background-image: url('../img/checked.svg');
 }

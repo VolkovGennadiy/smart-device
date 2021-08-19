@@ -1,6 +1,5 @@
 .benefits {
   position: relative;
-  overflow: hidden;
 
   &::before {
     content: '';
@@ -19,13 +18,14 @@
 
   &::after {
     content: '';
-    width: 725px;
-    height: 725px;
+    width: 342px;
+    height: 325px;
     background-image: url('../img/triangle-right.svg');
     position: absolute;
     background-repeat: no-repeat;
     top: 396px;
-    left: 1556px;
+    right: 22px;
+    z-index: -1;
 
     @media (max-width: $tablet-width) {
       display: none;
@@ -96,6 +96,7 @@
   display: flex;
   flex-direction: column;
   background-color: #FFFFFF;
+  cursor: pointer;
 
   @media (max-width: 1200px) {
     width: 368px;
@@ -129,6 +130,25 @@
   }
 }
 
+.benefits__image--confid {
+  margin-top: 42px;
+  margin-bottom: -4px;
+
+  @media (max-width: $tablet-width) {
+    margin-top: 25px;
+    margin-bottom: -4px;
+    margin-left: 24px;
+    width: 31px;
+    height: 30px;
+  }
+}
+
+.benefits__item--confid span{
+  @media (max-width: $tablet-width) {
+    margin-top: 7px;
+  }
+}
+
 .benefits__item p {
   font-family: 'Roboto Condensed', 'Arial', sans-serif;
   font-weight: normal;
@@ -136,7 +156,7 @@
   line-height: 34px;
   color: #00B2FF;
   margin-left: 42px;
-  margin-top: 19px;
+  margin-top: 22px;
   margin-bottom: 16px;
 
   @media (max-width: $tablet-width) {

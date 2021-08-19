@@ -127,6 +127,10 @@
   @media (max-width: $mobile-width) {
     display: none;
   }
+
+  &:hover {
+    background: #00ffff;
+  }
 }
 
 .main-block__link-mobile {
@@ -144,9 +148,13 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #FFFFFF;
-    padding: 18px 27px;
+    padding: 18px 26px;
     margin-left: 4px;
     width: 234px;
+  }
+
+  &:hover {
+    background: #00ffff;
   }
 }
 
@@ -231,6 +239,9 @@
   color: #ffffff;
   opacity: 0.5;
 
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .main-block__scroll {
@@ -238,6 +249,7 @@
   width: 100px;
   margin-left: -39px;
   margin-top: 145px;
+  margin-bottom: 97px;
 
   @media (max-width: 1562px) {
     margin-top: 100px;

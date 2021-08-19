@@ -1,3 +1,5 @@
-/* .page-main {
-  overflow: hidden;
-} */
+.page-main {
+  @media (max-width: $tablet-width) {
+    overflow: hidden;
+  }
+}
