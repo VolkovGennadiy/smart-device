@@ -6,8 +6,8 @@
   src:
     local("PT Mono"),
     local("PTMONO"),
-    url("../fonts/PTMono.woff2") format("woff2"),
-    url("../fonts/PTMono.woff") format("woff");
+    url("/fonts/PTMono.woff2") format("woff2"),
+    url("/fonts/PTMono.woff") format("woff");
 }
 
 @font-face {
@@ -18,8 +18,8 @@
   src:
     local("Roboto Condensed Bold"),
     local("RobotoCondensedBold"),
-    url("../fonts/RobotoCondensedBold.woff2") format("woff2"),
-    url("../fonts/RobotoCondensedBold.woff") format("woff");
+    url("/fonts/RobotoCondensedBold.woff2") format("woff2"),
+    url("/fonts/RobotoCondensedBold.woff") format("woff");
 }
 
 @font-face {
@@ -30,6 +30,6 @@
   src:
     local("Roboto Condensed Regular"),
     local("RobotoCondensedRegular"),
-    url("../fonts/RobotoCondensedRegular.woff2") format("woff2"),
-    url("../fonts/RobotoCondensedRegular.woff") format("woff");
+    url("/fonts/RobotoCondensedRegular.woff2") format("woff2"),
+    url("/fonts/RobotoCondensedRegular.woff") format("woff");
 }

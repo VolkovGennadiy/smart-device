@@ -23,8 +23,8 @@
 .modal__close {
   display: inline-block;
   vertical-align: middle;
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   background-image: url('../img/modal-close.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -62,13 +62,13 @@
 .modal__form {
   display: flex;
   flex-direction: column;
-  gap: 30px;
   align-items: center;
   margin-top: 31px;
 }
 
 .modal__block {
   position: relative;
+  margin-bottom: 31px;
 }
 
 .modal__block label {
@@ -139,7 +139,7 @@
   cursor: pointer;
 }
 
-.modal__block--check span {
+.modal__block-check span {
   font-family: 'PT Mono', 'Courier', monospace;
   font-size: 14px;
   line-height: 16px;
@@ -150,19 +150,20 @@
   margin-top: 3px;
 }
 
-.modal__block--check {
+.modal__block-check {
   display: flex;
+  margin-top: 28px;
 }
 
-.modal__block--check input {
+.modal__block-check input {
   width: 27px;
   height: 25px;
   position: absolute;
-  z-index: 1000;
+  z-index: -1;
   opacity: 0;
 }
 
-.modal__block--check input+label {
+.modal__block-check input+label {
   display: inline-flex;
   align-items: center;
   user-select: none;
@@ -182,6 +183,10 @@
   }
 }
 
-.modal__block--check input:checked+label::before {
+.modal__block-check input:checked+label::before {
   background-image: url('../img/checked.svg');
+}
+
+.modal__block-check input:focus + label::before {
+  outline: rgb(59, 153, 252) auto 10px;
 }

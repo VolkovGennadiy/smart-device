@@ -1,11 +1,15 @@
+import { createFocusTrap}  from './vendor.js'
+
 const anchors = document.querySelectorAll('.main-block__description a[href*="#"]');
 const buttonOpen = document.querySelector('.navigation__button');
 const modal = document.querySelector('.modal');
 const buttonClose = document.querySelector('.modal__close');
 const overlay = document.querySelector('.overlay');
-const buttonSection = document.querySelector('.footer-navigation__section-button');
+const buttonSection = document.querySelector('.footer-navigation__section-block');
+const buttonSectionToggle = document.querySelector('.footer-navigation__section-button')
 const sectionList = document.querySelector('.footer-navigation__section-list');
-const buttonOfice = document.querySelector('.footer-navigation__section-button--ofice');
+const buttonOfice = document.querySelector('.footer-navigation__ofice-block');
+const buttonOficeToogle = document.querySelector('.footer-navigation__section-button--ofice');
 const oficeList = document.querySelector('.footer-navigation__ofice-list');
 const navigationSectionNojs = document.querySelector('.footer-navigation__section-list');
 const navigationOficeNojs = document.querySelector('.footer-navigation__ofice-list');
@@ -21,17 +25,22 @@ const modalInputText = document.querySelector('#modal__text');
 const modalLabelName = document.querySelector('.modal__label--name');
 const modalLabelTell = document.querySelector('.modal__label--tell');
 const modalLabelText = document.querySelector('.modal__label--text');
+const pageBody = document.querySelector('.page-body');
+const modalName = document.querySelector('#modal__name');
+const modalFocusTrap = createFocusTrap(".modal");
 
 feedbackInput.addEventListener('keyup', function (evt) {
   feedbackLabel.classList.add('feedback__label--none');
-})
-
-feedbackInputTell.addEventListener('keyup', function (evt) {
-  feedbackLabelTell.classList.add('feedback__label--none');
+  if (feedbackInput.value == '' ) {
+    feedbackLabel.classList.remove('feedback__label--none');
+  }
 })
 
 feedbackInputText.addEventListener('keyup', function (evt) {
   feedbackLabelText.classList.add('feedback__label--none');
+  if (feedbackInputText.value == '' ) {
+    feedbackLabelText.classList.remove('feedback__label--none');
+  };
 })
 
 navigationSectionNojs.classList.remove('footer-navigation__section-list--nojs');
@@ -42,6 +51,8 @@ overlay.addEventListener('click', function (evt) {
   evt.preventDefault();
   modal.classList.remove('modal__open')
   overlay.classList.remove('overlay__active');
+  pageBody.classList.remove('page-body--hiden');
+  modalFocusTrap.deactivate();
 })
 
 window.addEventListener('keydown', function (evt) {
@@ -49,6 +60,8 @@ window.addEventListener('keydown', function (evt) {
     evt.preventDefault();
     modal.classList.remove('modal__open');
     overlay.classList.remove('overlay__active');
+    pageBody.classList.remove('page-body--hiden');
+    modalFocusTrap.deactivate();
   }
 })
 
@@ -67,17 +80,47 @@ for (let anchor of anchors) {
 
 buttonSection.onclick = () => {
   sectionList.classList.toggle('footer-navigation--visible');
-  buttonSection.classList.toggle('footer-navigation__section-button--toogle');
-  oficeList.classList.remove('footer-navigation--visible');
-  buttonOfice.classList.remove('footer-navigation__section-button-toggleofice');
+  buttonSectionToggle.classList.toggle('footer-navigation__section-button--toogle');
+  buttonOficeToogle.classList.remove('footer-navigation--visible');
+  buttonOficeToogle.classList.remove('footer-navigation__section-button-toggleofice');
 }
 
 buttonOfice.onclick = () => {
   oficeList.classList.toggle('footer-navigation--visible');
-  buttonOfice.classList.toggle('footer-navigation__section-button-toggleofice');
+  buttonOficeToogle.classList.toggle('footer-navigation__section-button-toggleofice');
   sectionList.classList.remove('footer-navigation--visible');
-  buttonSection.classList.remove('footer-navigation__section-button--toogle');
+  buttonSectionToggle.classList.remove('footer-navigation__section-button--toogle');
 }
+
+const feedbackLength = document.querySelector('#feedback__tell');
+const minFeedbackLentgh = 17;
+
+feedbackLength.addEventListener('input', () => {
+  const valueLength = feedbackLength.value.length;
+
+  if (valueLength <minFeedbackLentgh) {
+    feedbackLength.setCustomValidity('Номер должен состоять из десяти символов')
+  } 
+  else {
+    feedbackLength.setCustomValidity('');
+  }
+  feedbackLength.reportValidity();
+});
+
+const modalLength = document.querySelector('#modal__tell');
+
+modalLength.addEventListener('input', () => {
+  const valueLength = modalLength.value.length;
+
+  if (valueLength <minFeedbackLentgh) {
+    modalLength.setCustomValidity('Номер должен состоять из десяти символов')
+  } 
+  else {
+    modalLength.setCustomValidity('');
+  }
+  modalLength.reportValidity();
+});
+
 
 window.addEventListener('DOMContentLoaded', function() {
   [].forEach.call( document.querySelectorAll('#feedback__tell'), function(input) {
@@ -109,8 +152,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
     input.addEventListener('input', mask, false);
     input.addEventListener('focus', mask, false);
-    input.addEventListener('blur', mask, false);
-    input.addEventListener('keydown', mask, false)
+    input.addEventListener('keydown', mask, false) 
   });
   [].forEach.call( document.querySelectorAll('#modal__tell'), function(input) {
     let keyCode;
@@ -141,31 +183,50 @@ window.addEventListener('DOMContentLoaded', function() {
 
     input.addEventListener('input', mask, false);
     input.addEventListener('focus', mask, false);
-    input.addEventListener('blur', mask, false);
-    input.addEventListener('keydown', mask, false)
   });
 });
+
+feedbackInputTell.addEventListener('keyup', function (evt) {
+  feedbackLabelTell.classList.add('feedback__label--none');
+  if (feedbackLabelTell.value == '' ) {
+    feedbackLabelTell.classList.remove('feedback__label--none');
+  }
+})
 
 buttonOpen.addEventListener('click', function (evt) {
   evt.preventDefault();
   modal.classList.add('modal__open');
   overlay.classList.add('overlay__active');
+  pageBody.classList.add('page-body--hiden');
+  modalName.focus();
+  modalFocusTrap.activate();
 });
 
 buttonClose.addEventListener('click', function (evt) {
   evt.preventDefault();
   modal.classList.remove('modal__open')
   overlay.classList.remove('overlay__active');
+  pageBody.classList.remove('page-body--hiden');
+  modalFocusTrap.deactivate();
 });
 
 modalInputName.addEventListener('keyup', function (evt) {
   modalLabelName.classList.add('feedback__label--none');
+  if (modalInputName.value == '' ) {
+    modalLabelName.classList.remove('feedback__label--none');
+  }
 })
 
 modalInputTell.addEventListener('keyup', function (evt) {
   modalLabelTell.classList.add('feedback__label--none');
+  if (modalInputTell.value == '' ) {
+    modalLabelTell.classList.remove('feedback__label--none');
+  }
 })
 
 modalInputText.addEventListener('keyup', function (evt) {
   modalLabelText.classList.add('feedback__label--none');
+  if (modalInputText.value == '' ) {
+    modalLabelText.classList.remove('feedback__label--none');
+  }
 })

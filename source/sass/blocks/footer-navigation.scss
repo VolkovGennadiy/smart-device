@@ -1,9 +1,9 @@
 .footer-navigation {
   display: flex;
   width: 95%;
-  max-width: 1448px;
+  max-width: 1452px;
   margin: 0 auto;
-  justify-content: space-between;
+  justify-content: flex-start;
   min-height: 264px;
 
   @media (max-width: $tablet-width) {
@@ -16,6 +16,8 @@
 .footer-navigation__block {
   margin-top: 65px;
   margin-left: 16px;
+  width: 28.3%;
+  margin-right: 15px;
 
   @media (max-width: $tablet-width) {
     display: flex;
@@ -24,6 +26,7 @@
     justify-content: space-between;
     margin-top: 19px;
     margin-left: 0;
+    margin-right: 0;
     border-bottom: 1px solid rgba(98, 105, 98, 0.2);
   }
 
@@ -150,11 +153,14 @@
 
 .footer-navigation__section {
   margin-top: 53px;
-  margin-left: -213px;
+  min-width: 433px;
+  width: 656px;
 
   @media (max-width: $tablet-width) {
     margin-top: 26px;
     margin-left: 26px;
+    width: 374px;
+    min-width: 0;
   }
 
   @media (max-width: $mobile-width) {
@@ -168,6 +174,10 @@
 .footer-navigation__section-block {
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: $mobile-width) {
+    cursor: pointer;
+  }
 }
 
 .footer-navigation__ofice-block {
@@ -246,6 +256,7 @@
 .footer-navigation__ofice {
   margin-top: 53px;
   margin-right: 20px;
+  /* width: 334px; */
 
   @media (max-width: $tablet-width) {
     margin-top: 26px;
@@ -299,19 +310,22 @@
 }
 
 .footer-navigation__section-list {
-  height: 108px;
+  height: 45%;
+  max-height: 600px;
   flex-wrap: wrap;
   display: flex;
   flex-direction: column;
-  column-gap: 71px;
+  column-gap: 54px;
+  width: 445px;
 
   @media (max-width: $tablet-width) {
-    height: 209px;
+    height: 100%;
   }
 
   @media (max-width: $mobile-width) {
     display: none;
     margin-left: 15px;
+    width: 300px;
   }
 }
 
@@ -342,8 +356,13 @@
 
 
 .footer-copiraiting {
+  margin-top: -17px;
   width: 100%;
   border-top: 1px solid rgba(98, 105, 98, 0.2);
+
+  @media (max-width: $tablet-width) {
+    margin-top: 0;
+  }
 }
 
 .footer-copiraiting__list {
@@ -408,9 +427,8 @@
   }
 
   @media (max-width: $mobile-width) {
-    margin-right: 0;
+    margin: 0 auto;
     margin-top: 21px;
-    margin-left: 57px;
   }
 
   &:hover {
@@ -430,7 +448,6 @@
 
   @media (max-width: $mobile-width) {
     margin-top: 6px;
-    margin-left: 36px;
   }
 }
 

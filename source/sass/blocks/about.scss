@@ -3,17 +3,18 @@
   width: 100%;
   max-width: 1229px;
   margin: 0 auto;
-  padding-top: 75px;
+  padding-top: 45px;
   justify-content: center;
   min-height: 448px;
   overflow: hidden;
 
   @media (max-width: $tablet-width) {
-    min-height: 412px;
+    min-height: 414px;
   }
 
   @media (max-width: $mobile-width) {
     min-height: 535px;
+    padding-top: 58px;
   }
 }
 
@@ -92,7 +93,7 @@
 
   @media (max-width: $mobile-width) {
     margin-left: 9px;
-    width: 295px;
+    width: 92vw;
     -webkit-line-clamp: 8;
   }
 }

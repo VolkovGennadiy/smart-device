@@ -45,7 +45,7 @@
   <header class='page-header'>
     <section class='navigation'>
       <h2 class='visually-hidden'>Панель навигации</h2>
-      <a class='navigation__logo' href='#'>
+      <a class='navigation__logo'>
         <img src='img/logo-desktop.svg' width='202' height='52' alt='Логотип компании Service Device'>
       </a>
       <ul class='navigation__list no-bulites'>
@@ -78,7 +78,7 @@
         <picture>
           <source type='image/webp' srcset='img/pay.webp 1x, img/pay2x.webp 2x'>
           <!-- 1х: 705px; 2x: 1410px -->
-          <img src='img/pay.png' srcset="img/pay.png 1x" srcset="img/pay2x.png 2x" width='705' height='515' alt='Изображение печатной платы'>
+          <img src='img/pay.png' srcset="img/pay.png 1x, img/pay2x.png 2x" width='705' height='515' alt='Изображение печатной платы'>
         </picture>
       </div>
     </section>
@@ -126,7 +126,7 @@
       <picture>
         <source type='image/webp' srcset='img/about-logo.webp 1x, img/about-logo2x.webp 2x'>
         <!-- 1х: 215px; 2x: 430px -->
-        <img src='img/about-logo.png' srcset="img/about-logo.png 1x" srcset="img/about-logo2x.png 2x" width='215' height='318' alt='Изоброжение логотипа в блоке о компании. Отображает год - 2005'>
+        <img src='img/about-logo.png' srcset="img/about-logo.png 1x, img/about-logo2x.png 2x" width='215' height='318' alt='Изоброжение логотипа в блоке о компании. Отображает год - 2005'>
       </picture>
       <ul class='about__list no-bulites'>
         <li class='about__item'>
@@ -158,22 +158,25 @@
       <ul class='goods-service__list no-bulites'>
         <li class='goods-service__item'>
           <a class='goods-service__link' href='#'>
+            <p>Производство печатных плат</p>
             <div class='goods-service__block goods-service__block--manafacturi'>
-              <p>Производство печатных плат</p>
+              <span class="visually-hidden">Производство печатных плат</span>
             </div>
           </a>
         </li>
         <li class='goods-service__item'>
           <a class='goods-service__link' href='#'>
+            <p>Монтаж печатных плат</p>
             <div class='goods-service__block goods-service__block--mounting'>
-              <p>Монтаж печатных плат</p>
+              <span class="visually-hidden">Монтаж печатных плат</span>
             </div>
           </a>
         </li>
         <li class='goods-service__item'>
-          <a class='goods-service__link' href='#'>
+          <a class='goods-service__link goods-service__link--accessories' href='#'>
+            <p>Комплектующие для светотехники</p>
             <div class='goods-service__block goods-service__block--accessories'>
-              <p>Комплектующие для светотехники</p>
+              <span class="visually-hidden">Комплектующие для светотехники</span>
             </div>
           </a>
         </li>
@@ -188,13 +191,13 @@
             <input type='text' id='feedback__input' name='name' required>
             <label class='feedback__label' for='feedback__input'>Имя</label>
           </div>
-          <div class='feedback__block'>
-            <input type='tel' id='feedback__tell' name='tell' required>
+          <div class='feedback__block feedback__block--tell'>
+            <input type='tel' id='feedback__tell' name='tell' minlength="10" required>
             <label class='feedback__label feedback__label--tell' for='feedback__tell'>Телефон</label>
           </div>
           <div class='feedback__block'>
             <textarea id='feedback__text' name='text' required></textarea>
-            <label class="feedback__label feedback__label--text" for='text'>Ваш вопрос</label>
+            <label class="feedback__label feedback__label--text" for='feedback__text'>Ваш вопрос</label>
           </div>
           <button class='feedback__send' type='submit'>Задать вопрос</button>
           <div class='feedback__block-check'>
@@ -208,7 +211,7 @@
   <footer class='page-footer'>
     <section class='footer-navigation'>
       <div class='footer-navigation__block'>
-        <a class='footer-navigation__logo' href='#'>
+        <a class='footer-navigation__logo'>
           <img src='img/logo-footer.svg' width='216' height='52' alt='Логотип компании Smart Device'>
         </a>
         <span>1999-2018 SD Service Devices</span>
@@ -249,7 +252,8 @@
           </li>
           <li class='footer-navigation__section-item'>
             <a class='footer-navigation__section-link' href='#'>Монтаж печатных плат</a>
-          </li><li class='footer-navigation__section-item'>
+          </li>
+          <li class='footer-navigation__section-item'>
             <a class='footer-navigation__section-link' href='#'>Комплектующие</a>
           </li>
           <li class='footer-navigation__section-item'>
@@ -269,7 +273,7 @@
         </div>
         <ul class='footer-navigation__ofice-list footer-navigation__ofice-list--nojs no-bulites'>
           <li class='footer-navigation__ofice-item'>
-            <span class='footer-navigation__ofice-link' href='#'>г. Мытищи, Олимпийский проспект, д.10</span>
+            <span class='footer-navigation__ofice-link'>г. Мытищи, Олимпийский проспект, д.10</span>
           </li>
           <li class='footer-navigation__ofice-item'>
             <a class='footer-navigation__ofice-link' href='tel:+7(495)5894050'>+7 (495) 589-40-50</a>
@@ -301,7 +305,7 @@
     </section>
   </footer>
   <div class='modal'>
-    <button type="button" class='modal__close' href='#'>
+    <button type="button" class='modal__close'>
       <span class='visually-hidden'>Закрыть</span>
     </button>
     <div class='modal__description'>
@@ -318,19 +322,19 @@
         <label class='modal__label modal__label--tell' for='modal__tell'>Телефон</label>
       </div>
       <div class='modal__block'>
-        <textarea id='modal__text' name='modal__text'required></textarea>
+        <textarea id='modal__text' name='modal__text' required></textarea>
         <label class='modal__label modal__label--text' for='modal__text'>Ваш вопрос</label>
       </div>
       <button class='modal__send' type='submit'>Отправить</button>
-      <div class='modal__block--check'>
+      <div class= 'modal__block-check'>
         <input type='checkbox' id='checkboxmodal' name='checkbox' required checked>
         <label for='checkboxmodal'>
-          <span href='#'>Я согласен на обработку  персональных данных</span>
+          <span>Я согласен на обработку  персональных данных</span>
         </label>
       </div>
     </form>
   </div>
   <div class='overlay'></div>
-  <script src='js/main.js'></script>
+  <script src='js/main.js' type="module"></script>
 </body>
 </html>
