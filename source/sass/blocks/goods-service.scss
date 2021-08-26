@@ -33,6 +33,8 @@
   margin: 0 auto;
   padding-top: 51px;
   flex-wrap: wrap;
+  padding-left: 20px;
+  padding-right: 20px;
 
   @media (max-width: $tablet-width) {
     flex-direction: column;
@@ -120,97 +122,33 @@
 
 .goods-service__block--manafacturi {
   position: relative;
-  background-image: url('../../img/manafucture.png');
+  background-image: url('../img/manafucture.png');
   opacity: 0.2;
 
   @media (max-width: $tablet-width) {
-    background-image: url('../../img/manafucture-tablet.png');
+    background-image: url('../img/manafucture-tablet.png');
     background-repeat: no-repeat;
   }
-
-  @media (max-width: $mobile-width) {
-    /* width: 100%; */
-  }
-
-  /* &::before {
-    width: 370px;
-    height: 620px;
-    content: '';
-    position: absolute;
-    background-image: url('../img/manafucture.png');
-    opacity: 0.2;
-
-    @media (max-width: $tablet-width) {
-      width: 715px;
-      height: 256px;
-      background-image: url('../img/manafucture-tablet.png');
-    }
-
-    @media (max-width: $mobile-width) {
-      width: 290px;
-      background-image: url('../img/manafucture-mobile.png');
-    }
-  } */
 }
 
 .goods-service__block--mounting {
   position: relative;
-  background-image: url('../../img/mounting.png');
+  background-image: url('../img/mounting.png');
   opacity: 0.2;
 
   @media (max-width: $tablet-width) {
-    background-image: url('../../img/mounting-tablet.png');
+    background-image: url('../img/mounting-tablet.png');
   }
-
-  /* &::before {
-    width: 370px;
-    height: 620px;
-    content: '';
-    position: absolute;
-    background-image: url('../img/mounting.png');
-    opacity: 0.2;
-
-    @media (max-width: $tablet-width) {
-      width: 720px;
-      height: 256px;
-      background-image: url('../img/mounting-tablet.png');
-    }
-
-    @media (max-width: $mobile-width) {
-      width: 290px;
-      background-image: url('../img/mounting-mobile.png');
-    }
-  } */
 }
 
 .goods-service__block--accessories {
   position: relative;
-  background-image: url('../../img/accessories.png');
+  background-image: url('../img/accessories.png');
   opacity: 0.2;
 
   @media (max-width: $tablet-width) {
-    background-image: url('../../img/accessories-tablet.png');
+    background-image: url('../img/accessories-tablet.png');
   }
-
-  /* &::before {
-    width: 370px;
-    height: 620px;
-    content: '';
-    position: absolute;
-    background-image: url('../img/accessories.png');
-    opacity: 0.2;
-
-    @media (max-width: $tablet-width) {
-      width: 720px;
-      height: 256px;
-      background-image: url('../img/accessories-tablet.png');
-    }
-
-    @media (max-width: $mobile-width) {
-      width: 290px;
-      background-image: url('../img/accessories-mobile.png');
-    }
-  } */
 }
 
 .goods-service__link p {

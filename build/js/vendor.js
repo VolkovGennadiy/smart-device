@@ -11,7 +11,7 @@ const candidateSelectors = [
     'details>summary:first-of-type',
     'details',
   ];
-  const candidateSelector = /* #__PURE__ */ candidateSelectors.join(',');
+  const candidateSelector = candidateSelectors.join(',');
   
   const matches =
     typeof Element === 'undefined'
@@ -41,18 +41,11 @@ const candidateSelectors = [
     if (!isNaN(tabindexAttr)) {
       return tabindexAttr;
     }
-  
-    // Browsers do not return `tabIndex` correctly for contentEditable nodes;
-    // so if they don't have a tabindex attribute specifically set, assume it's 0.
+
     if (isContentEditable(node)) {
       return 0;
     }
-  
-    // in Chrome, <details/>, <audio controls/> and <video controls/> elements get a default
-    //  `tabIndex` of -1 when the 'tabindex' attribute isn't specified in the DOM,
-    //  yet they are still part of the regular tab order; in FF, they get a default
-    //  `tabIndex` of 0; since Chrome still puts those elements in the regular tab
-    //  order, consider their tab index to be 0.
+
     if (
       (node.nodeName === 'AUDIO' ||
         node.nodeName === 'VIDEO' ||
@@ -119,7 +112,6 @@ const candidateSelectors = [
       try {
         radioSet = queryRadios(node.name);
       } catch (err) {
-        // eslint-disable-next-line no-console
         console.error(
           'Looks like you have a radio button with a name attribute containing invalid CSS selector characters and need the CSS.escape polyfill: %s',
           err.message
@@ -165,9 +157,6 @@ const candidateSelectors = [
     return false;
   };
   
-  // form fields (nested) inside a disabled fieldset are not focusable/tabbable
-  //  unless they are in the _first_ <legend> element of the top-most disabled
-  //  fieldset
   const isDisabledFromFieldset = function (node) {
     if (
       isInput(node) ||
@@ -178,11 +167,6 @@ const candidateSelectors = [
       let parentNode = node.parentElement;
       while (parentNode) {
         if (parentNode.tagName === 'FIELDSET' && parentNode.disabled) {
-          // look for the first <legend> as an immediate child of the disabled
-          //  <fieldset>: if the node is in that legend, it'll be enabled even
-          //  though the fieldset is disabled; otherwise, the node is in a
-          //  secondary/subsequent legend, or somewhere else within the fieldset
-          //  (however deep nested) and it'll be disabled
           for (let i = 0; i < parentNode.children.length; i++) {
             const child = parentNode.children.item(i);
             if (child.tagName === 'LEGEND') {
@@ -190,22 +174,17 @@ const candidateSelectors = [
                 return false;
               }
   
-              // the node isn't in the first legend (in doc order), so no matter
-              //  where it is now, it'll be disabled
               return true;
             }
           }
   
-          // the node isn't in a legend, so no matter where it is now, it'll be disabled
           return true;
         }
   
         parentNode = parentNode.parentElement;
       }
     }
-  
-    // else, node's tabbable/focusable state should not be affected by a fieldset's
-    //  enabled/disabled state
+
     return false;
   };
   
@@ -214,7 +193,6 @@ const candidateSelectors = [
       node.disabled ||
       isHiddenInput(node) ||
       isHidden(node, options.displayCheck) ||
-      // For a details element with a summary, the summary element gets the focus
       isDetailsWithSummary(node) ||
       isDisabledFromFieldset(node)
     ) {
@@ -290,7 +268,7 @@ const candidateSelectors = [
     return isNodeMatchingSelectorTabbable(options, node);
   };
   
-  const focusableCandidateSelector = /* #__PURE__ */ candidateSelectors
+  const focusableCandidateSelector = candidateSelectors
     .concat('iframe')
     .join(',');
   
@@ -322,7 +300,6 @@ const activeFocusTraps = (function () {
       if (trapIndex === -1) {
         trapQueue.push(trap);
       } else {
-        // move this existing trap to the front of the queue
         trapQueue.splice(trapIndex, 1);
         trapQueue.push(trap);
       }
@@ -361,18 +338,16 @@ const delay = function (fn) {
   return setTimeout(fn, 0);
 };
 
-// Array.find/findIndex() are not supported on IE; this replicates enough
-//  of Array.findIndex() for our needs
 const findIndex = function (arr, fn) {
   let idx = -1;
 
   arr.every(function (value, i) {
     if (fn(value)) {
       idx = i;
-      return false; // break
+      return false;
     }
 
-    return true; // next
+    return true;
   });
 
   return idx;
@@ -400,16 +375,10 @@ const createFocusTrap = function (elements, userOptions) {
   };
 
   const state = {
-    // @type {Array<HTMLElement>}
+
     containers: [],
 
-    // list of objects identifying the first and last tabbable nodes in all containers/groups in
-    //  the trap
-    // NOTE: it's possible that a group has no tabbable nodes if nodes get removed while the trap
-    //  is active, but the trap should never get to a state where there isn't at least one group
-    //  with at least one tabbable node in it (that would lead to an error condition that would
-    //  result in an error being thrown)
-    // @type {Array<{ container: HTMLElement, firstTabbableNode: HTMLElement|null, lastTabbableNode: HTMLElement|null }>}
+
     tabbableGroups: [],
 
     nodeFocusedBeforeActivation: null,
@@ -417,12 +386,11 @@ const createFocusTrap = function (elements, userOptions) {
     active: false,
     paused: false,
 
-    // timer ID for when delayInitialFocus is true and initial focus in this trap
-    //  has been delayed during activation
+
     delayInitialFocusTimer: undefined,
   };
 
-  let trap; // eslint-disable-line prefer-const -- some private functions reference it, and its methods reference private functions, so we must declare here and define later
+  let trap; 
 
   const getOption = (configOverrideOptions, optionName, configOptionName) => {
     return configOverrideOptions &&
@@ -463,7 +431,6 @@ const createFocusTrap = function (elements, userOptions) {
   const getInitialFocusNode = function () {
     let node;
 
-    // false indicates we want no initialFocus at all
     if (getOption({}, 'initialFocus') === false) {
       return false;
     }
@@ -503,9 +470,9 @@ const createFocusTrap = function (elements, userOptions) {
 
         return undefined;
       })
-      .filter((group) => !!group); // remove groups with no tabbable nodes
+      .filter((group) => !!group);
 
-    // throw if no groups have tabbable nodes and we don't have a fallback focus node either
+
     if (
       state.tabbableGroups.length <= 0 &&
       !getNodeForOption('fallbackFocus')
@@ -544,93 +511,57 @@ const createFocusTrap = function (elements, userOptions) {
     return node ? node : previousActiveElement;
   };
 
-  // This needs to be done on mousedown and touchstart instead of click
-  // so that it precedes the focus event.
+
   const checkPointerDown = function (e) {
     if (containersContain(e.target)) {
-      // allow the click since it ocurred inside the trap
       return;
     }
 
     if (valueOrHandler(config.clickOutsideDeactivates, e)) {
-      // immediately deactivate the trap
       trap.deactivate({
-        // if, on deactivation, we should return focus to the node originally-focused
-        //  when the trap was activated (or the configured `setReturnFocus` node),
-        //  then assume it's also OK to return focus to the outside node that was
-        //  just clicked, causing deactivation, as long as that node is focusable;
-        //  if it isn't focusable, then return focus to the original node focused
-        //  on activation (or the configured `setReturnFocus` node)
-        // NOTE: by setting `returnFocus: false`, deactivate() will do nothing,
-        //  which will result in the outside click setting focus to the node
-        //  that was clicked, whether it's focusable or not; by setting
-        //  `returnFocus: true`, we'll attempt to re-focus the node originally-focused
-        //  on activation (or the configured `setReturnFocus` node)
         returnFocus: config.returnFocusOnDeactivate && !isFocusable(e.target),
       });
       return;
     }
 
-    // This is needed for mobile devices.
-    // (If we'll only let `click` events through,
-    // then on mobile they will be blocked anyways if `touchstart` is blocked.)
     if (valueOrHandler(config.allowOutsideClick, e)) {
-      // allow the click outside the trap to take place
       return;
     }
 
-    // otherwise, prevent the click
     e.preventDefault();
   };
 
-  // In case focus escapes the trap for some strange reason, pull it back in.
   const checkFocusIn = function (e) {
     const targetContained = containersContain(e.target);
-    // In Firefox when you Tab out of an iframe the Document is briefly focused.
     if (targetContained || e.target instanceof Document) {
       if (targetContained) {
         state.mostRecentlyFocusedNode = e.target;
       }
     } else {
-      // escaped! pull it back in to where it just left
       e.stopImmediatePropagation();
       tryFocus(state.mostRecentlyFocusedNode || getInitialFocusNode());
     }
   };
 
-  // Hijack Tab events on the first and last focusable nodes of the trap,
-  // in order to prevent focus from escaping. If it escapes for even a
-  // moment it can end up scrolling the page and causing confusion so we
-  // kind of need to capture the action at the keydown phase.
   const checkTab = function (e) {
     updateTabbableNodes();
 
     let destinationNode = null;
 
     if (state.tabbableGroups.length > 0) {
-      // make sure the target is actually contained in a group
-      // NOTE: the target may also be the container itself if it's tabbable
-      //  with tabIndex='-1' and was given initial focus
       const containerIndex = findIndex(state.tabbableGroups, ({ container }) =>
         container.contains(e.target)
       );
 
       if (containerIndex < 0) {
-        // target not found in any group: quite possible focus has escaped the trap,
-        //  so bring it back in to...
         if (e.shiftKey) {
-          // ...the last node in the last group
           destinationNode =
             state.tabbableGroups[state.tabbableGroups.length - 1]
               .lastTabbableNode;
         } else {
-          // ...the first node in the first group
           destinationNode = state.tabbableGroups[0].firstTabbableNode;
         }
       } else if (e.shiftKey) {
-        // REVERSE
-
-        // is the target the first tabbable node in a group?
         let startOfGroupIndex = findIndex(
           state.tabbableGroups,
           ({ firstTabbableNode }) => e.target === firstTabbableNode
@@ -640,16 +571,10 @@ const createFocusTrap = function (elements, userOptions) {
           startOfGroupIndex < 0 &&
           state.tabbableGroups[containerIndex].container === e.target
         ) {
-          // an exception case where the target is the container itself, in which
-          //  case, we should handle shift+tab as if focus were on the container's
-          //  first tabbable node, and go to the last tabbable node of the LAST group
           startOfGroupIndex = containerIndex;
         }
 
         if (startOfGroupIndex >= 0) {
-          // YES: then shift+tab should go to the last tabbable node in the
-          //  previous group (and wrap around to the last tabbable node of
-          //  the LAST group if it's the first tabbable node of the FIRST group)
           const destinationGroupIndex =
             startOfGroupIndex === 0
               ? state.tabbableGroups.length - 1
@@ -659,9 +584,6 @@ const createFocusTrap = function (elements, userOptions) {
           destinationNode = destinationGroup.lastTabbableNode;
         }
       } else {
-        // FORWARD
-
-        // is the target the last tabbable node in a group?
         let lastOfGroupIndex = findIndex(
           state.tabbableGroups,
           ({ lastTabbableNode }) => e.target === lastTabbableNode
@@ -671,16 +593,10 @@ const createFocusTrap = function (elements, userOptions) {
           lastOfGroupIndex < 0 &&
           state.tabbableGroups[containerIndex].container === e.target
         ) {
-          // an exception case where the target is the container itself, in which
-          //  case, we should handle tab as if focus were on the container's
-          //  last tabbable node, and go to the first tabbable node of the FIRST group
           lastOfGroupIndex = containerIndex;
         }
 
         if (lastOfGroupIndex >= 0) {
-          // YES: then tab should go to the first tabbable node in the next
-          //  group (and wrap around to the first tabbable node of the FIRST
-          //  group if it's the last tabbable node of the LAST group)
           const destinationGroupIndex =
             lastOfGroupIndex === state.tabbableGroups.length - 1
               ? 0
@@ -698,7 +614,6 @@ const createFocusTrap = function (elements, userOptions) {
       e.preventDefault();
       tryFocus(destinationNode);
     }
-    // else, let the browser take care of [shift+]tab and move the focus
   };
 
   const checkKey = function (e) {
@@ -734,20 +649,13 @@ const createFocusTrap = function (elements, userOptions) {
     e.stopImmediatePropagation();
   };
 
-  //
-  // EVENT LISTENERS
-  //
-
   const addListeners = function () {
     if (!state.active) {
       return;
     }
 
-    // There can be only one listening focus trap at a time
     activeFocusTraps.activateTrap(trap);
 
-    // Delay ensures that the focused element doesn't capture the event
-    // that caused the focus trap activation.
     state.delayInitialFocusTimer = config.delayInitialFocus
       ? delay(function () {
           tryFocus(getInitialFocusNode());
@@ -788,10 +696,6 @@ const createFocusTrap = function (elements, userOptions) {
 
     return trap;
   };
-
-  //
-  // TRAP DEFINITION
-  //
 
   trap = {
     activate(activateOptions) {
@@ -842,7 +746,7 @@ const createFocusTrap = function (elements, userOptions) {
         return this;
       }
 
-      clearTimeout(state.delayInitialFocusTimer); // noop if undefined
+      clearTimeout(state.delayInitialFocusTimer);
       state.delayInitialFocusTimer = undefined;
 
       removeListeners();
@@ -928,7 +832,6 @@ const createFocusTrap = function (elements, userOptions) {
     },
   };
 
-  // initialize container elements
   trap.updateContainerElements(elements);
 
   return trap;

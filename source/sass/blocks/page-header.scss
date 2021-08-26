@@ -4,6 +4,7 @@
   background-image: url('../img/header-background.png');
   background-repeat: no-repeat;
   overflow: hidden;
+  background-size: cover;
 
   @media (min-resolution: 2dppx) {
     background-image: url('../img/header-background2x.png');
